@@ -28,9 +28,14 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+
   const AddFavoriteMovie = (movie) => {
-    const newFavoriteList = [...favorites, movie];
-    setFavorites(newFavoriteList);
+    if (favorites.includes(movie)){
+      return;
+    } else {
+      const newFavoriteList = [...favorites, movie];
+      setFavorites(newFavoriteList);
+    }
   }
 
   const RemoveFavoriteMovie = (movie) => {
