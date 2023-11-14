@@ -1,13 +1,15 @@
 import React from 'react'
 
-const MovieList = (props) => {
+const MovieList = ({movies}) => {
 
   return (
-    <div>
-        {props.movies.map((movie, index) => 
-            <img src={movie.Poster} alt={movie.Title}></img>
-        )}
-    </div>
+    <>
+        {movies.map((movie, index) => (
+            <div key={index} className='d-flex justify-content-start m-3' style={{ width: 'fit-content' }}>
+                <img src={movie.Poster} alt={movie.Title} style={{ width: '100%' }} />
+            </div>
+        ))}
+    </>
   )
 }
 
